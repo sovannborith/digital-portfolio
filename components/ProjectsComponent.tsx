@@ -17,7 +17,7 @@ function ProjectsComponent({ projects }: Props) {
         {projects?.map((project, i) => (
           <div
             key={project._id}
-            className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center "
+            className="w-screen h-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center px-6"
           >
             <motion.img
               initial={{
@@ -32,7 +32,7 @@ function ProjectsComponent({ projects }: Props) {
               className="absolute w-[450px] h-[300px] rounded-lg object-fill object-center top-[10px]"
             />
 
-            <div className="relative space-y-5 px-0 md:px-10 max-w-6xl top-[-30px]">
+            <div className="relative top-16 space-y-5 px-0 max-w-7xl">
               <h4 className="text-3xl font-semibold text-center">
                 <span className="underline decoration-[#7FAB0A]/50">
                   Case Study {i + 1} of {projects.length}:

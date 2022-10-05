@@ -8,7 +8,7 @@ type Props = {
 
 function ExperienceCardComponent({ experience }: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[400px] md:w-[500px] xl:w-[700px]  snap-center bg-[#292929] px-10 py-5 opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden ">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[400px] md:w-[500px] xl:w-[700px]  snap-center bg-[#292929] px-10 py-5 opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden ">
       <motion.img
         initial={{ y: -100, opacity: 0 }}
         transition={{ duration: 1.5 }}
@@ -18,8 +18,12 @@ function ExperienceCardComponent({ experience }: Props) {
         src={urlFor(experience?.companyImage).url()}
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
-        <p className="font-bold text-2xl mt-1">{experience?.company}</p>
+        <h4 className="text-2xl font-light md:text-4xl">
+          {experience?.jobTitle}
+        </h4>
+        <p className="font-bold text-xl mt-1 md:text-2xl">
+          {experience?.company}
+        </p>
         <div className="flex space-x-2 my-2">
           {experience?.technologies.map((technology) => (
             <img
@@ -38,7 +42,7 @@ function ExperienceCardComponent({ experience }: Props) {
             ? "Present"
             : new Date(experience?.endDate).toDateString()}
         </p>
-        <ul className="list-disc space-y-2 ml-5 text-md">
+        <ul className="list-disc space-y-1 ml-5 text-md">
           {experience?.point?.map((point) => (
             <li key={experience._id + point}>{point}</li>
           ))}

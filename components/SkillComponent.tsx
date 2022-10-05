@@ -16,7 +16,7 @@ function SkillComponent({ skills }: Props) {
       <h3 className="absolute top-32 uppercase tracking-[3px] text-gray-500 text-sm">
         Hover over a skill for currency proficiency
       </h3>
-      <div className="absolute grid grid-cols-4 gap-5 top-40">
+      <div className="absolute grid grid-cols-4 gap-5 top-44 md:top-40">
         {skills?.map((skill) => (
           <SkillCardComponent key={skill._id} skill={skill} />
         ))}
